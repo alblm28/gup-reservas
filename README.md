@@ -55,7 +55,7 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 \- \[x] Diagrama de tablas
 
-\- \[ ] Scripts SQL
+\- \[x] Tablas SQL
 
 \- \[ ] Backend
 
