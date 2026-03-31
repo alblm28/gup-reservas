@@ -130,3 +130,7 @@ CREATE TABLE pago (
         REFERENCES reserva (id_reserva)
         ON DELETE RESTRICT
 );
+
+SELECT * FROM RESERVA;
+
+-- si va lento añadir indices, por ahora no creo que sean necesarios
