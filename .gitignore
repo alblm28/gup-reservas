@@ -1,0 +1,174 @@
+# ═══════════════════════════════════════════════════════════════
+#  .gitignore - Proyecto GUP Reservas
+#  Este archivo define qué archivos NO se suben a GitHub
+# ═══════════════════════════════════════════════════════════════
+
+# ───────────────────────────────────────────────────────────────
+#   SEGURIDAD
+# ───────────────────────────────────────────────────────────────
+.env
+.env.local
+.env.production
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+secrets.json
+credentials.json
+passwords.txt
+*.password
+*.secret
+
+# Spring Boot / Java configs sensibles
+application.properties
+application.yml
+application-dev.properties
+application-prod.properties
+bootstrap.properties
+bootstrap.yml
+
+# ───────────────────────────────────────────────────────────────
+#  DOCUMENTOS
+# ───────────────────────────────────────────────────────────────
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pptx
+*.ppt
+~$*.docx
+~$*.xlsx
+~$*.doc
+*.odt
+*.ods
+*.odp
+
+# ───────────────────────────────────────────────────────────────
+#  IDE 
+# ───────────────────────────────────────────────────────────────
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# NetBeans
+nbproject/
+nbbuild/
+dist/
+nbdist/
+
+# ───────────────────────────────────────────────────────────────
+#   JAVA / SPRING BOOT 
+# ───────────────────────────────────────────────────────────────
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Gradle
+build/
+.gradle/
+gradle-app.setting
+*.gradle
+
+# Archivos compilados
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# Logs de build
+*.log
+
+# ───────────────────────────────────────────────────────────────
+#   BASE DE DATOS - Archivos locales de BD
+# ───────────────────────────────────────────────────────────────
+*.sql~
+*.dump
+*.bak
+*.backup
+*.db
+*.sqlite
+*.sqlite3
+
+# ───────────────────────────────────────────────────────────────
+#  SISTEMA OPERATIVO 
+# ───────────────────────────────────────────────────────────────
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+
+# ───────────────────────────────────────────────────────────────
+#   NODE / FRONTEND - Si uso npm o React 
+# ───────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build de frontend
+dist/
+build/
+.next/
+.nuxt/
+
+# ───────────────────────────────────────────────────────────────
+#  TESTING - Archivos de pruebas
+# ───────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+*.cover
+*.pyc
+__pycache__/
+
+# ───────────────────────────────────────────────────────────────
+#  TEMPORALES - Archivos temporales varios
+# ───────────────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.cache/
+*.orig
+
+# ───────────────────────────────────────────────────────────────
+#   IMÁGENES - Si no quieres subir ciertas imágenes
+# ───────────────────────────────────────────────────────────────
+# Descomenta si quieres excluir imágenes locales
+# *.png
+# *.jpg
+# *.jpeg
+# *.gif
+
+# ───────────────────────────────────────────────────────────────
+#  SUBIR (para referencia)
+# ───────────────────────────────────────────────────────────────
+#  - README.md
+#  - requisitos.md (si lo conviertes de Word a Markdown)
+#  - docs/*.png (diagramas)
+#  - sql/*.sql (scripts de base de datos)
+#  - backend/src/**/*.java (código Java)
+#  - frontend/**/*.html, **.css, **.js (código web)
+# ═══════════════════════════════════════════════════════════════
