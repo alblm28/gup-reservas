@@ -1,58 +1,98 @@
 # ═══════════════════════════════════════════════════════════════
-#  .gitignore - Proyecto GUP Reservas
-#  Este archivo define qué archivos NO se suben a GitHub
+#  .gitignore — GUP Cabanias
+#  Java 25 + Spring Boot + PostgreSQL + HTML/CSS/JS
 # ═══════════════════════════════════════════════════════════════
 
+
+
 # ───────────────────────────────────────────────────────────────
-#   SEGURIDAD
+#  SEGURIDAD 
 # ───────────────────────────────────────────────────────────────
+
+# Configuraciones locales con credenciales reales
+application-local.properties
+application-local.yml
+application-dev.properties
+application-dev.yml
+application-prod.properties
+application-prod.yml
+application-staging.properties
+application-staging.yml
+
+
+# Variables de entorno
 .env
 .env.local
+.env.development
 .env.production
+.env.staging
+.env.test
+
+# Claves y certificados
 *.key
 *.pem
 *.crt
+*.cer
 *.p12
 *.pfx
+*.jks
+*.keystore
+*.truststore
+
+# Archivos de secretos genéricos
 secrets.json
+secrets.yml
+secrets.properties
 credentials.json
-passwords.txt
-*.password
-*.secret
+credentials.yml
+*secret*
+*password*
+*passwd*
+*credential*
+*private*
 
-# Spring Boot / Java configs sensibles
-application.properties
-application.yml
-application-dev.properties
-application-prod.properties
-bootstrap.properties
-bootstrap.yml
+
 
 # ───────────────────────────────────────────────────────────────
-#  DOCUMENTOS
+#  JAVA
 # ───────────────────────────────────────────────────────────────
-*.docx
-*.doc
-*.xlsx
-*.xls
-*.pptx
-*.ppt
-~$*.docx
-~$*.xlsx
-~$*.doc
-*.odt
-*.ods
-*.odp
+
+# Compilados
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Gradle (por si migra en futuro)
+build/
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+
 
 # ───────────────────────────────────────────────────────────────
-#  IDE 
+#  IDE
 # ───────────────────────────────────────────────────────────────
+
 # IntelliJ IDEA
 .idea/
 *.iml
 *.ipr
 *.iws
 out/
+*.xml~
 
 # VS Code
 .vscode/
@@ -62,113 +102,137 @@ out/
 .classpath
 .project
 .settings/
+bin/
 
 # NetBeans
 nbproject/
 nbbuild/
-dist/
 nbdist/
 
+
+
 # ───────────────────────────────────────────────────────────────
-#   JAVA / SPRING BOOT 
+#  LOGS
 # ───────────────────────────────────────────────────────────────
-# Maven
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-
-# Gradle
-build/
-.gradle/
-gradle-app.setting
-*.gradle
-
-# Archivos compilados
-*.class
-*.jar
-*.war
-*.ear
-*.nar
-
-# Logs de build
 *.log
+*.log.*
+logs/
+log/
+spring.log
+
+
 
 # ───────────────────────────────────────────────────────────────
-#   BASE DE DATOS - Archivos locales de BD
+#  BASE DE DATOS — Archivos locales
 # ───────────────────────────────────────────────────────────────
-*.sql~
 *.dump
 *.bak
 *.backup
-*.db
 *.sqlite
 *.sqlite3
+*.db
 
-# ───────────────────────────────────────────────────────────────
-#  SISTEMA OPERATIVO 
-# ───────────────────────────────────────────────────────────────
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.lnk
+# Scripts de datos sensibles 
+data-local.sql
+seed-local.sql
+insert*.sql
+
 
 
 # ───────────────────────────────────────────────────────────────
-#   NODE / FRONTEND - Si uso npm o React 
+#  FRONTEND — HTML/CSS/JS y posible React futuro
 # ───────────────────────────────────────────────────────────────
 node_modules/
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
 package-lock.json
 yarn.lock
+.pnp
+.pnp.js
 
-# Build de frontend
+# Builds de frontend
 dist/
 build/
 .next/
 .nuxt/
+.cache/
+
+
 
 # ───────────────────────────────────────────────────────────────
-#  TESTING - Archivos de pruebas
+#  SISTEMA OPERATIVO
 # ───────────────────────────────────────────────────────────────
-coverage/
-.nyc_output/
-*.cover
-*.pyc
-__pycache__/
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
+
+
 
 # ───────────────────────────────────────────────────────────────
-#  TEMPORALES - Archivos temporales varios
+#  TEMPORALES
 # ───────────────────────────────────────────────────────────────
 *.tmp
 *.temp
 *.swp
 *.swo
-*~
-.cache/
 *.orig
+*.bak
+*.old
+
+
 
 # ───────────────────────────────────────────────────────────────
-#   IMÁGENES - Si no quieres subir ciertas imágenes
+#  DOCUMENTOS 
 # ───────────────────────────────────────────────────────────────
-# Descomenta si quieres excluir imágenes locales
-# *.png
-# *.jpg
-# *.jpeg
-# *.gif
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pptx
+*.ppt
+*.odt
+*.ods
+*.odp
+~$*
 
-# ───────────────────────────────────────────────────────────────
-#  SUBIR (para referencia)
-# ───────────────────────────────────────────────────────────────
-#  - README.md
-#  - requisitos.md (si lo conviertes de Word a Markdown)
-#  - docs/*.png (diagramas)
-#  - sql/*.sql (scripts de base de datos)
-#  - backend/src/**/*.java (código Java)
-#  - frontend/**/*.html, **.css, **.js (código web)
+
+
+# ═══════════════════════════════════════════════════════════════
+#  QUÉ SÍ SE SUBE — Referencia rápida
+# ═══════════════════════════════════════════════════════════════
+#
+#  ✅ application.properties       (sin valores reales, solo ${VARIABLES})
+#  ✅ src/**/*.java                 (todo el código fuente)
+#  ✅ pom.xml                       (dependencias Maven)
+#  ✅ sql/schema.sql                (estructura de la BD)
+#  ✅ frontend/*.html, *.css, *.js  (código del frontend)
+#  ✅ docs/*.png                    (diagramas y documentación)
+#  ✅ README.md                     (instrucciones del proyecto)
+#
+#  ❌ application-local.properties  (tus credenciales locales)
+#  ❌ target/                       (compilados)
+#  ❌ .idea/                        (configuración de tu IDE)
+#  ❌ *.jar                         (binarios)
+#  ❌ Cualquier contraseña o clave
+#
 # ═══════════════════════════════════════════════════════════════
