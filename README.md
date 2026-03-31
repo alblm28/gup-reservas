@@ -24,8 +24,7 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 \- Realizar reservas con datos de los huéspedes
 
-\- Pago, en principio con Stripe, no confirmado
-
+\- Pago
 \- Descargar PDF de confirmación
 
 \- Panel de administrador para gestionar reservas
@@ -42,7 +41,7 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 \- \*\*Frontend:\*\* HTML, CSS, JavaScript
 
-\- \*\*Pagos:\*\* Stripe API
+\- \*\*Pagos:\*\* Stripe API (por confirmar)
 
 
 
@@ -84,11 +83,11 @@ gup-reservas/
 
 Desarrollado por Alba Llano
 
-&#x20;Email: alballanomanrique28@gmail.com  
+Email: alballanomanrique28@gmail.com  
 
-💼 LinkedIn: \[linkedin.com/in/alballanoma](https://linkedin.com/in/alballanoma)  
+LinkedIn: \[linkedin.com/in/alballanoma](https://linkedin.com/in/alballanoma)  
 
-📂 GitHub: \[github.com/alblm28](https://github.com/alblm28)
+ GitHub: \[github.com/alblm28](https://github.com/alblm28)
 
 
 
