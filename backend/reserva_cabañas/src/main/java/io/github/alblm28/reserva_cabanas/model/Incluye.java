@@ -11,7 +11,7 @@ import java.io.Serializable; //para la id
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
+@IdClass(IncluyeId.class)
 public class Incluye implements Serializable {
 
    //ID compuesta x reserva y huesped

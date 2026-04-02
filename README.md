@@ -25,7 +25,8 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 \- Realizar reservas con datos de los huéspedes
 
 \- Pago
-- Descargar PDF de confirmación
+
+* Descargar PDF de confirmación
 
 \- Panel de administrador para gestionar reservas
 
@@ -59,7 +60,7 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 \- \[x] Entidades y Enums
 
-\- \[ ] Interfaces de acceso a BD
+\- \[x] Interfaces de acceso a BD
 
 \- \[ ] Lógica
 
@@ -79,7 +80,7 @@ gup-reservas/
 
 ├── backend/ # Java / SpringBoot
 
-└── frontend/ 
+└── frontend/
 
 \## Autor
 
