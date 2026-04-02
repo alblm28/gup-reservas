@@ -76,7 +76,6 @@ public class Usuario {
     //FECHA CREACION
     @CreationTimestamp
     // Hibernate asigna automáticamente CURRENT TIMESTAMP
-
     @Column(name = "fecha_creacion", nullable = false)
     private ZonedDateTime fechaCreacion;
 
