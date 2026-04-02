@@ -23,7 +23,7 @@ public class FotosCabania {
     @Column(name = "orden", nullable = false)
     private Short orden;
     //relacion cabania
-    @ManyToOne(fetch = FetchType.LAZY)  // ← N fotos → 1 cabaña
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cabania", nullable = false)
     private Cabania cabania;
 }

@@ -25,7 +25,7 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 \- Realizar reservas con datos de los huéspedes
 
 \- Pago
-\- Descargar PDF de confirmación
+- Descargar PDF de confirmación
 
 \- Panel de administrador para gestionar reservas
 
@@ -39,7 +39,7 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 \- \*\*Backend:\*\* Java + Spring Boot
 
-\- \*\*Frontend:\*\* HTML, CSS, JavaScript
+\- \*\*Frontend:\*\* HTML, CSS, JavaScript | posible React a futuro
 
 \- \*\*Pagos:\*\* Stripe API (por confirmar)
 
@@ -57,7 +57,13 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 \- \[x] Tablas SQL
 
-\- \[ ] Backend
+\- \[x] Entidades y Enums
+
+\- \[ ] Interfaces de acceso a BD
+
+\- \[ ] Lógica
+
+\- \[ ] Endpoints HTTP
 
 \- \[ ] Frontend
 
@@ -71,11 +77,9 @@ gup-reservas/
 
 ├── sql/ # Scripts de base de datos
 
-├── backend/ # Código Java (próximamente)
+├── backend/ # Java / SpringBoot
 
-└── frontend/ # Código web (próximamente)
-
-
+└── frontend/ 
 
 \## Autor
 
@@ -83,11 +87,11 @@ gup-reservas/
 
 Desarrollado por Alba Llano
 
-Email: alballanomanrique28@gmail.com  
+Email: alballanomanrique28@gmail.com
 
-LinkedIn: \[linkedin.com/in/alballanoma](https://linkedin.com/in/alballanoma)  
+LinkedIn: \[linkedin.com/in/alballanoma](https://linkedin.com/in/alballanoma)
 
- GitHub: \[github.com/alblm28](https://github.com/alblm28)
+GitHub: \[github.com/alblm28](https://github.com/alblm28)
 
 
 
