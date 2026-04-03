@@ -40,12 +40,12 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
 
     //verifica si está activa ahora
     @Query("SELECT r FROM Reserva r WHERE r.cabania.idCabania = :idCabania " +
-            "AND r.estado = 'confirmada' " +
+            "AND r.estado = :estado " +
             "AND r.fechaInicio <= :ahora " +
             "AND r.fechaFin >= :ahora")
     Optional<Reserva> findReservaActiva(
             @Param("idCabania") Integer idCabania,
             @Param("ahora") ZonedDateTime ahora,
-             @Param("estado") EstadoReserva estado
+            @Param("estado") EstadoReserva estado
     );
 }

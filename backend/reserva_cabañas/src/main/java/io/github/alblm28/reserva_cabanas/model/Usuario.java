@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 // para manejar fechas con zona horaria TIMESTAMPTZ en Postgre
 import java.time.ZonedDateTime;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
 @Entity
 // hace q spring boot sepa q es una tabla
 
@@ -40,11 +43,8 @@ public class Usuario {
     //Integer puede ser null, int no
 
 //ROL
-    @Enumerated(EnumType.STRING)
-    // guarda el enum como texto en la BD
-    // sin esto, guardaría como 0,1
-
-    @Column(name = "rol", nullable = false)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
+    @Column(name = "rol", nullable = false,columnDefinition = "rol_usuario")
     // nullable = false es not null
 
     private RolUsuario rol;

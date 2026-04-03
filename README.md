@@ -62,9 +62,9 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 \- \[x] Interfaces de acceso a BD
 
-\- \[ ] Lógica
+\- \[x] Lógica
 
-\- \[ ] Endpoints HTTP
+\- \[x] Endpoints HTTP
 
 \- \[ ] Frontend
 

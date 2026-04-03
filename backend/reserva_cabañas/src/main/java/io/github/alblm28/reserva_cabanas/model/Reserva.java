@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import java.time.ZonedDateTime;
 import java.math.BigDecimal;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "reserva")
@@ -26,7 +28,7 @@ public class Reserva {
     @Column(name = "num_huespedes", nullable = false)
     private Short numHuespedes;
     //ESTADO
-    @Enumerated(EnumType.STRING)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     @Column(name = "estado", nullable = false)
     private EstadoReserva estado;
     //CREACION
