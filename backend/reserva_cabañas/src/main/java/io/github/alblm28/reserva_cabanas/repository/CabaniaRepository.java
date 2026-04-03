@@ -21,10 +21,12 @@ public interface CabaniaRepository extends JpaRepository<Cabania, Integer> {
     List<Cabania> findByCapacidadMaxGreaterThanEqual(Short capacidad);
 
     //verifica si está activa ahora
-    @Query("SELECT COUNT(r) > 0 FROM Reserva r WHERE r.cabania.idCabania = :idCabania " +
-            "AND r.estado = 'confirmada' " +
-            "AND r.fechaInicio <= :ahora " +
+    @Query("SELECT CASE WHEN COUNT(r) > 0  THEN true ELSE false END " +
+"FROM Reserva r WHERE r.cabania.idCabania = :idCabania " +
+            "AND r.estado = :estado" +
+            " AND r.fechaInicio <= :ahora " +
             "AND r.fechaFin >= :ahora")
     boolean isCabaniaEnUso(@Param("idCabania") Integer idCabania,
-                           @Param("ahora") ZonedDateTime ahora);
+                           @Param("ahora") ZonedDateTime ahora,
+                        @Param("estado") EstadoReserva estado);
 }

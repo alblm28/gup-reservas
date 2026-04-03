@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
 import java.math.BigDecimal;
 
 @Entity
@@ -34,17 +37,17 @@ public class Cabania {
     private BigDecimal precioNoche;
 
    //ESTADO
-    @Enumerated(EnumType.STRING)
+   @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     @Column(name = "estado", nullable = false)
     private EstadoCabania estado;
 
     //VENTILACION
-    @Enumerated(EnumType.STRING)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     @Column(name = "ventilacion", nullable = false)
     private TipoVentilacion ventilacion;
 
     //CAMA
-    @Enumerated(EnumType.STRING)
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
     @Column(name = "cama", nullable = false)
     private TipoCama cama;
     //ENCHUFES
