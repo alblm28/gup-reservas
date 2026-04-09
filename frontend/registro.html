@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUP — Registrarse</title>
+    <link rel="icon" type="image/jpeg" href="recursos/gup_logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="pagina_auth">
+
+    <!--Cabecera-->
+    <header class="cabecera">
+        <div class="cabecera_contenedor">
+            <a href="index.html" class="cabecera_logo">
+                <img src="recursos/gup_logo.png" alt="Logo GUP" class="cabecera_logo_img">
+            </a>
+            <nav class="cabecera_nav">
+                <a href="index.html" class="cabecera_nav_enlace">Cabañas</a>
+                <a href="login.html" class="cabecera_nav_enlace">Iniciar sesión</a>
+            </nav>
+            <button class="cabecera_menu" id="btn_menu_movil" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!--Menu movil-->
+    <div class="menu_movil" id="menu_movil" hidden>
+        <nav class="menu_movil_nav">
+            <a href="index.html" class="menu_movil_enlace">Cabañas</a>
+            <a href="login.html" class="menu_movil_enlace">Iniciar sesión</a>
+        </nav>
+    </div>
+
+    <!--Registro-->
+    <main class="auth_contenedor auth_contenedor_invertido">
+
+        <!--Formulario-->
+        <div class="auth_formulario_contenedor">
+            <div class="auth_caja auth_caja_registro">
+
+                <div class="auth_caja_cabecera">
+                    <h1 class="auth_caja_titulo">Crear cuenta</h1>
+                    <p class="auth_caja_subtitulo">
+                        ¿Ya tienes cuenta? <a href="login.html" class="auth_enlace">Inicia sesión aquí</a>
+                    </p>
+                </div>
+
+                <div class="auth_alerta auth_alerta_error" id="alerta_error" hidden>
+                    <span aria-hidden="true">⚠</span>
+                    <span id="alerta_error_texto"></span>
+                </div>
+
+                <div class="auth_alerta auth_alerta_exito" id="alerta_exito" hidden>
+                    <span aria-hidden="true">✓</span>
+                    <span id="alerta_exito_texto"></span>
+                </div>
+
+                <form class="auth_form" id="formulario_registro" novalidate>
+
+                    <div class="auth_form_fila">
+                        <div class="campo" id="campo_nombre">
+                            <label class="campo_etiqueta" for="nombre">Nombre</label>
+                            <input class="campo_entrada" type="text" id="nombre" name="nombre"
+                                placeholder="Tu nombre" autocomplete="given-name" required>
+                            <span class="campo_error" id="error_nombre"></span>
+                        </div>
+                        <div class="campo" id="campo_apellido1">
+                            <label class="campo_etiqueta" for="apellido1">Primer apellido</label>
+                            <input class="campo_entrada" type="text" id="apellido1" name="apellido1"
+                                placeholder="Primer apellido" autocomplete="family-name" required>
+                            <span class="campo_error" id="error_apellido1"></span>
+                        </div>
+                    </div>
+
+                    <div class="auth_form_fila">
+                        <div class="campo" id="campo_apellido2">
+                            <label class="campo_etiqueta" for="apellido2">
+                                Segundo apellido <span class="campo_etiqueta_nota">(si no tienes, repite el primero)</span>
+                            </label>
+                            <input class="campo_entrada" type="text" id="apellido2" name="apellido2"
+                                placeholder="Segundo apellido" autocomplete="additional-name" required>
+                            <span class="campo_error" id="error_apellido2"></span>
+                        </div>
+                        <div class="campo" id="campo_tel">
+                            <label class="campo_etiqueta" for="tel">
+                                Teléfono <span class="campo_etiqueta_nota">(opcional)</span>
+                            </label>
+                            <input class="campo_entrada" type="tel" id="tel" name="tel"
+                                placeholder="+34 600 000 000" autocomplete="tel">
+                            <span class="campo_error" id="error_tel"></span>
+                        </div>
+                    </div>
+
+                    <div class="campo" id="campo_email">
+                        <label class="campo_etiqueta" for="email">Correo electrónico</label>
+                        <input class="campo_entrada" type="email" id="email" name="email"
+                            placeholder="tu@correo.com" autocomplete="email" required>
+                        <span class="campo_error" id="error_email"></span>
+                    </div>
+
+                    <div class="auth_form_fila">
+                        <div class="campo" id="campo_contrasenia">
+                            <label class="campo_etiqueta" for="contrasenia">Contraseña</label>
+                            <div class="campo_entrada_contenedor">
+                                <input class="campo_entrada" type="password" id="contrasenia" name="contrasenia"
+                                    placeholder="Mínimo 8 caracteres" autocomplete="new-password" required>
+                                <button type="button" class="campo_ver" id="btn_ver_contrasenia" aria-label="Mostrar contraseña">👁</button>
+                            </div>
+                            <span class="campo_error" id="error_contrasenia"></span>
+                        </div>
+                        <div class="campo" id="campo_confirmar">
+                            <label class="campo_etiqueta" for="confirmar_contrasenia">Confirmar contraseña</label>
+                            <div class="campo_entrada_contenedor">
+                                <input class="campo_entrada" type="password" id="confirmar_contrasenia"
+                                    placeholder="Repite la contraseña" autocomplete="new-password" required>
+                                <button type="button" class="campo_ver" id="btn_ver_confirmar" aria-label="Mostrar contraseña">👁</button>
+                            </div>
+                            <span class="campo_error" id="error_confirmar"></span>
+                        </div>
+                    </div>
+
+                    <div class="seguridad_contrasenia" id="seguridad_contrasenia" hidden>
+                        <div class="seguridad_barra">
+                            <div class="seguridad_relleno" id="seguridad_relleno"></div>
+                        </div>
+                        <span class="seguridad_texto" id="seguridad_texto"></span>
+                    </div>
+
+                    <button type="submit" class="auth_boton_submit" id="boton_registro">
+                        <span class="auth_boton_texto">Crear cuenta</span>
+                        <span class="auth_boton_cargando" hidden>
+                            <span class="girador_pequeno"></span> Creando cuenta...
+                        </span>
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+        <!--Panel imagen-->
+        <div class="auth_panel auth_panel_imagen" aria-hidden="true">
+            <div class="auth_panel_overlay"></div>
+            <div class="auth_panel_contenido">
+                <p class="auth_panel_eyebrow">Voluntariado · Senegal</p>
+                <h2 class="auth_panel_titulo">Únete a GUP</h2>
+                <p class="auth_panel_descripcion">Regístrate para reservar tu estancia como voluntario en nuestras cabañas en Senegal.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!--Pie-->
+    <footer class="pie_pagina">
+        <div class="pie_pagina_contenedor">
+            <p class="pie_pagina_texto">© 2026 Asociación GUP · Proyecto de voluntariado · Prototipo Alba Llano</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/registro.js"></script>
+
+</body>
+</html>

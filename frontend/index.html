@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUP</title>
+    <link rel="icon" type="image/jpeg" href="recursos/gup_logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!--Cabecera-->
+    <header class="cabecera">
+        <div class="cabecera_contenedor">
+            <a href="index.html" class="cabecera_logo">
+                <img src="recursos/gup_logo.png" alt="Logo GUP" class="cabecera_logo_img">
+            </a>
+            <nav class="cabecera_nav">
+                <a href="index.html" class="cabecera_nav_enlace cabecera_nav_activo">Cabañas</a>
+                <a href="login.html" class="cabecera_nav_enlace">Iniciar sesión</a>
+                <a href="reservas.html" class="cabecera_nav_enlace">Consultar tus reservas</a>
+            </nav>
+            <button class="cabecera_menu" id="btn_menu_movil" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!--Menu movil desplegable-->
+    <div class="menu_movil" id="menu_movil" hidden>
+        <nav class="menu_movil_nav">
+            <a href="index.html" class="menu_movil_enlace menu_movil_activo">Cabañas</a>
+            <a href="login.html" class="menu_movil_enlace">Iniciar sesión</a>
+            <a href="reservas.html" class="menu_movil_enlace">Consultar tus reservas</a>
+        </nav>
+    </div>
+
+    <!--Portada-->
+    <section class="portada">
+        <div class="portada_contenido">
+            <h1 class="portada_titulo">Encuentra tu cabaña</h1>
+            <p class="portada_descripcion">Alojamiento para voluntarios de la asociación GUP en Senegal.</p>
+        </div>
+    </section>
+
+    <!--Filtros-->
+    <section class="filtros">
+        <div class="filtros_contenedor">
+
+            <div class="filtros_barra" id="filtros_barra">
+
+                <!--inicio-->
+                <div class="filtros_grupo">
+                    <label class="filtros_etiqueta" for="filtro_fecha_inicio">Desde</label>
+                    <input class="filtros_entrada" type="date" id="filtro_fecha_inicio">
+                </div>
+                <!--fin-->
+                <div class="filtros_grupo">
+                    <label class="filtros_etiqueta" for="filtro_fecha_fin">Hasta</label>
+                    <input class="filtros_entrada" type="date" id="filtro_fecha_fin">
+                </div>
+
+                <!--Desplegable adicionales-->
+                <div class="filtros_grupo filtros_desplegable_contenedor">
+                    <span class="filtros_etiqueta">Filtros</span>
+                    <button class="filtros_desplegable_boton" id="btn_mas_filtros" aria-expanded="false">
+                    Filtros <span class="filtros_desplegable_flecha">▼</span>
+                    </button>
+                    <div class="filtros_desplegable_panel" id="panel_mas_filtros" hidden>
+
+                        <div class="filtros_grupo">
+                            <label class="filtros_etiqueta" for="filtro_capacidad">Personas (mín.)</label>
+                            <input class="filtros_entrada" type="number" id="filtro_capacidad" min="1" max="4" placeholder="Cualquiera">
+                        </div>
+
+                        <div class="filtros_grupo">
+                            <label class="filtros_etiqueta" for="filtro_cama">Tipo de cama</label>
+                            <select class="filtros_selector" id="filtro_cama">
+                                <option value="">Cualquiera</option>
+                                <option value="individual">Individual</option>
+                                <option value="doble">Doble</option>
+                                <option value="litera">Litera</option>
+                            </select>
+                        </div>
+
+                        <div class="filtros_grupo">
+                            <label class="filtros_etiqueta" for="filtro_ventilacion">Ventilación</label>
+                            <select class="filtros_selector" id="filtro_ventilacion">
+                                <option value="">Cualquiera</option>
+                                <option value="natural">Natural</option>
+                                <option value="ventilador">Ventilador</option>
+                                <option value="aire_acondicionado">Aire acondicionado</option>
+                            </select>
+                        </div>
+
+                        <div class="filtros_grupo">
+                            <span class="filtros_etiqueta">Enchufes</span>
+                            <div class="filtros_radio_grupo">
+                                <label class="filtros_radio_opcion">
+                                    <input type="radio" name="filtro_enchufes" value="" checked> Cualquiera
+                                </label>
+                                <label class="filtros_radio_opcion">
+                                    <input type="radio" name="filtro_enchufes" value="si"> Sí
+                                </label>
+                                <label class="filtros_radio_opcion">
+                                    <input type="radio" name="filtro_enchufes" value="no"> No
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="filtros_boton filtros_boton_cerrar" id="btn_cerrar_filtros">Guardar y cerrar</button>
+
+                    </div>
+                </div>
+
+                <div class="filtros_grupo">
+                    <label class="filtros_etiqueta" for="filtro_orden">Ordenar por</label>
+                    <select class="filtros_selector" id="filtro_orden">
+                        <option value="nombre">Nombre</option>
+                        <option value="precio_asc">Precio: menor a mayor</option>
+                        <option value="precio_desc">Precio: mayor a menor</option>
+                        <option value="capacidad">Capacidad</option>
+                    </select>
+                </div>
+
+                <div class="filtros_acciones">
+                    <button class="filtros_boton" id="boton_filtrar">Filtrar</button>
+                    <button class="filtros_boton filtros_boton_secundario" id="boton_limpiar">Limpiar</button>
+                </div>
+
+            </div>
+
+            <!--Toggle menu movil-->
+            <button class="filtros_toggle" id="btn_toggle_filtros" aria-expanded="false">
+                <span>☰</span>
+                <span>Filtros</span>
+                <span class="filtros_toggle_flecha">▼</span>
+            </button>
+
+            <!--Panel movil-->
+            <div class="filtros_panel_movil" id="panel_filtros_movil" hidden>
+
+                <div class="filtros_grupo">
+                    <label class="filtros_etiqueta" for="filtro_fecha_inicio_movil">Desde</label>
+                    <input class="filtros_entrada" type="date" id="filtro_fecha_inicio_movil">
+                </div>
+
+                <div class="filtros_grupo">
+                    <label class="filtros_etiqueta" for="filtro_fecha_fin_movil">Hasta</label>
+                    <input class="filtros_entrada" type="date" id="filtro_fecha_fin_movil">
+                </div>
+
+                <div class="filtros_grupo">
+                    <label class="filtros_etiqueta" for="filtro_capacidad_movil">Personas (mín.)</label>
+                    <input class="filtros_entrada" type="number" id="filtro_capacidad_movil" min="1" max="4" placeholder="Cualquiera">
+                </div>
+
+                <div class="filtros_grupo">
+                    <label class="filtros_etiqueta" for="filtro_cama_movil">Tipo de cama</label>
+                    <select class="filtros_selector" id="filtro_cama_movil">
+                        <option value="">Cualquiera</option>
+                        <option value="individual">Individual</option>
+                        <option value="doble">Doble</option>
+                        <option value="litera">Litera</option>
+                    </select>
+                </div>
+
+                <div class="filtros_grupo">
+                    <label class="filtros_etiqueta" for="filtro_ventilacion_movil">Ventilación</label>
+                    <select class="filtros_selector" id="filtro_ventilacion_movil">
+                        <option value="">Cualquiera</option>
+                        <option value="natural">Natural</option>
+                        <option value="ventilador">Ventilador</option>
+                        <option value="aire_acondicionado">Aire acondicionado</option>
+                    </select>
+                </div>
+
+                <div class="filtros_grupo">
+                    <span class="filtros_etiqueta">Enchufes</span>
+                    <div class="filtros_radio_grupo">
+                        <label class="filtros_radio_opcion">
+                            <input type="radio" name="filtro_enchufes_movil" value="" checked> Cualquiera
+                        </label>
+                        <label class="filtros_radio_opcion">
+                            <input type="radio" name="filtro_enchufes_movil" value="si"> Sí
+                        </label>
+                        <label class="filtros_radio_opcion">
+                            <input type="radio" name="filtro_enchufes_movil" value="no"> No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filtros_grupo">
+                    <label class="filtros_etiqueta" for="filtro_orden_movil">Ordenar por</label>
+                    <select class="filtros_selector" id="filtro_orden_movil">
+                        <option value="nombre">Nombre</option>
+                        <option value="precio_asc">Precio: menor a mayor</option>
+                        <option value="precio_desc">Precio: mayor a menor</option>
+                        <option value="capacidad">Capacidad</option>
+                    </select>
+                </div>
+
+                <div class="filtros_acciones">
+                    <button class="filtros_boton" id="boton_filtrar_movil">Filtrar</button>
+                    <button class="filtros_boton filtros_boton_secundario" id="boton_limpiar_movil">Limpiar</button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!--Principal-->
+    <main class="principal">
+        <div class="principal_contenedor">
+
+            <div class="estado_carga" id="estado_carga">
+                <div class="girador" aria-label="Cargando cabañas..."></div>
+                <p>Cargando cabañas...</p>
+            </div>
+
+            <div class="estado_error" id="estado_error" hidden>
+                <p class="estado_error_texto">No se pudo conectar con el servidor.</p>
+                <button class="filtros_boton" id="boton_reintentar">Reintentar</button>
+            </div>
+
+            <div class="estado_vacio" id="estado_vacio" hidden>
+                <p>No se encontraron cabañas con los filtros seleccionados.</p>
+            </div>
+
+            <div class="cuadricula_cabanas" id="cuadricula_cabanas" hidden></div>
+
+        </div>
+    </main>
+
+    <!--Plantilla tarjeta-->
+    <template id="plantilla_cabana">
+        <article class="tarjeta_cabana">
+            <div class="tarjeta_cabana_imagen_contenedor">
+                <div class="tarjeta_cabana_imagen_placeholder" aria-hidden="true"></div>
+                <span class="tarjeta_cabana_estado"></span>
+            </div>
+            <div class="tarjeta_cabana_cuerpo">
+                <h2 class="tarjeta_cabana_nombre"></h2>
+                <p class="tarjeta_cabana_descripcion"></p>
+                <ul class="tarjeta_cabana_detalles">
+                    <li class="tarjeta_cabana_detalle">
+                        <span aria-hidden="true">👤</span>
+                        <span class="tarjeta_cabana_capacidad"></span>
+                    </li>
+                    <li class="tarjeta_cabana_detalle">
+                        <span aria-hidden="true">🛏</span>
+                        <span class="tarjeta_cabana_cama"></span>
+                    </li>
+                    <li class="tarjeta_cabana_detalle">
+                        <span aria-hidden="true">🚿</span>
+                        <span class="tarjeta_cabana_banios"></span>
+                    </li>
+                </ul>
+                <div class="tarjeta_cabana_pie">
+                    <span class="tarjeta_cabana_precio"></span>
+                    <a class="tarjeta_cabana_boton" href="#">Ver cabaña</a>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <!--Footer-->
+    <footer class="pie_pagina">
+        <div class="pie_pagina_contenedor">
+            <p class="pie_pagina_texto">© 2026 Asociación GUP · Proyecto de voluntariado · Prototipo Alba Llano</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+</html>

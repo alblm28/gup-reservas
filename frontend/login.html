@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUP — Iniciar sesión</title>
+    <link rel="icon" type="image/jpeg" href="recursos/gup_logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="pagina_auth">
+
+    <!--Cabecera-->
+    <header class="cabecera">
+        <div class="cabecera_contenedor">
+            <a href="index.html" class="cabecera_logo">
+                <img src="recursos/gup_logo.png" alt="Logo GUP" class="cabecera_logo_img">
+            </a>
+            <nav class="cabecera_nav">
+                <a href="index.html" class="cabecera_nav_enlace">Cabañas</a>
+                <a href="registro.html" class="cabecera_nav_enlace">Registrarse</a>
+                <!--no pongo enlace a mis reservas aqui porque no tendria sentido sin estar logeado, lo mismo registro-->
+            </nav>
+            <button class="cabecera_menu" id="btn_menu_movil" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!--Menu movil-->
+    <div class="menu_movil" id="menu_movil" hidden>
+        <nav class="menu_movil_nav">
+            <a href="index.html" class="menu_movil_enlace">Cabañas</a>
+            <a href="registro.html" class="menu_movil_enlace">Registrarse</a>
+        </nav>
+    </div>
+
+    <!--Login-->
+    <main class="auth_contenedor">
+
+        <!--Panel imagen-->
+        <div class="auth_panel auth_panel_imagen" aria-hidden="true">
+            <div class="auth_panel_overlay"></div>
+            <div class="auth_panel_contenido">
+                <p class="auth_panel_eyebrow">Voluntariado · Senegal</p>
+                <h2 class="auth_panel_titulo">Bienvenido de nuevo</h2>
+                <p class="auth_panel_descripcion">Accede a tu cuenta para gestionar tus reservas en las cabañas GUP.</p>
+            </div>
+        </div>
+
+        <!--Formulario-->
+        <div class="auth_formulario_contenedor">
+            <div class="auth_caja">
+
+                <div class="auth_caja_cabecera">
+                    <h1 class="auth_caja_titulo">Iniciar sesión</h1>
+                    <p class="auth_caja_subtitulo">
+                        ¿No tienes cuenta? <a href="registro.html" class="auth_enlace">Regístrate aquí</a>
+                    </p>
+                </div>
+
+                <div class="auth_alerta auth_alerta_error" id="alerta_error" hidden>
+                    <span aria-hidden="true">⚠</span>
+                    <span id="alerta_error_texto"></span>
+                </div>
+
+                <form class="auth_form" id="formulario_login" novalidate>
+
+                    <div class="campo" id="campo_email">
+                        <label class="campo_etiqueta" for="email">Correo electrónico</label>
+                        <input class="campo_entrada" type="email" id="email" name="email"
+                            placeholder="tu@correo.com" autocomplete="email" required>
+                        <span class="campo_error" id="error_email"></span>
+                    </div>
+
+                    <div class="campo" id="campo_contrasenia">
+                        <label class="campo_etiqueta" for="contrasenia">Contraseña</label>
+                        <div class="campo_entrada_contenedor">
+                            <input class="campo_entrada" type="password" id="contrasenia" name="contrasenia"
+                                placeholder="Tu contraseña" autocomplete="current-password" required>
+                            <button type="button" class="campo_ver" id="btn_ver_contrasenia" aria-label="Mostrar contraseña">👁</button>
+                        </div>
+                        <span class="campo_error" id="error_contrasenia"></span>
+                    </div>
+
+                    <button type="submit" class="auth_boton_submit" id="boton_login">
+                        <span class="auth_boton_texto">Iniciar sesión</span>
+                        <span class="auth_boton_cargando" hidden>
+                            <span class="girador_pequeno"></span> Entrando...
+                        </span>
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!--Pie-->
+    <footer class="pie_pagina">
+        <div class="pie_pagina_contenedor">
+            <p class="pie_pagina_texto">© 2026 Asociación GUP · Proyecto de voluntariado · Prototipo Alba Llano</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+</html>

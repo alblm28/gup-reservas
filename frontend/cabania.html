@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUP </title>
+    <link rel="icon" type="image/jpeg" href="recursos/gup_logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!--Cabecera-->
+    <header class="cabecera">
+        <div class="cabecera_contenedor">
+            <a href="index.html" class="cabecera_logo">
+                <img src="recursos/gup_logo.png" alt="Logo GUP" class="cabecera_logo_img">
+            </a>
+            <nav class="cabecera_nav">
+                <a href="index.html" class="cabecera_nav_enlace">Cabañas</a>
+                <a href="login.html" class="cabecera_nav_enlace">Iniciar sesión</a>
+                <a href="reservas.html" class="cabecera_nav_enlace">Mis reservas</a>
+            </nav>
+            <button class="cabecera_menu" id="btn_menu_movil" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!--Menu movil-->
+    <div class="menu_movil" id="menu_movil" hidden>
+        <nav class="menu_movil_nav">
+            <a href="index.html" class="menu_movil_enlace">Cabañas</a>
+            <a href="login.html" class="menu_movil_enlace">Iniciar sesión</a>
+            <a href="reservas.html" class="menu_movil_enlace">Consultar tus reservas</a>
+        </nav>
+    </div>
+
+    <!--Cargando-->
+    <div class="pagina_carga" id="pagina_carga">
+        <div class="girador"></div>
+        <p>Cargando cabaña...</p>
+    </div>
+
+    <!--Error-->
+    <div class="pagina_error" id="pagina_error" hidden>
+        <p class="pagina_error_texto">No se pudo cargar la cabaña.</p>
+        <a href="index.html" class="pagina_error_enlace">← Volver al listado</a>
+    </div>
+
+    <!--Detalle-->
+    <main class="detalle" id="detalle_cabana" hidden>
+
+        <!--Migas-->
+        <nav class="migas" aria-label="Ruta de navegación">
+            <div class="migas_contenedor">
+                <a href="index.html" class="migas_enlace">Cabañas</a>
+                <span class="migas_sep" aria-hidden="true">›</span>
+                <span class="migas_actual" id="miga_nombre"></span>
+            </div>
+        </nav>
+
+        <!--Galeria-->
+        <section class="galeria">
+            <div class="galeria_contenedor">
+                <div class="galeria_principal" id="foto_principal">
+                    <div class="galeria_placeholder" aria-hidden="true"></div>
+                </div>
+                <div class="galeria_miniaturas" id="galeria_miniaturas"></div>
+            </div>
+        </section>
+
+        <!--Cuerpo: info + reserva-->
+        <div class="detalle_cuerpo">
+
+            <!--Info-->
+            <div class="detalle_info">
+
+                <div class="detalle_cabecera">
+                    <div class="detalle_cabecera_textos">
+                        <h1 class="detalle_nombre" id="detalle_nombre"></h1>
+                        <span class="detalle_estado" id="detalle_estado"></span>
+                    </div>
+                    <p class="detalle_precio" id="detalle_precio"></p>
+                </div>
+
+                <!--Descripcion-->
+                <div class="detalle_seccion">
+                    <h2 class="detalle_seccion_titulo">Descripción</h2>
+                    <p class="detalle_descripcion" id="detalle_descripcion"></p>
+                </div>
+
+                <!--Caracteristicas-->
+                <div class="detalle_seccion">
+                    <h2 class="detalle_seccion_titulo">Características</h2>
+                    <ul class="detalle_caracteristicas">
+                        <li class="detalle_caracteristica">
+                            <span aria-hidden="true">👤</span>
+                            <div>
+                                <span class="detalle_car_nombre">Capacidad</span>
+                                <span class="detalle_car_valor" id="car_capacidad"></span>
+                            </div>
+                        </li>
+                        <li class="detalle_caracteristica">
+                            <span aria-hidden="true">🛏</span>
+                            <div>
+                                <span class="detalle_car_nombre">Tipo de cama</span>
+                                <span class="detalle_car_valor" id="car_cama"></span>
+                            </div>
+                        </li>
+                        <li class="detalle_caracteristica">
+                            <span aria-hidden="true">🚿</span>
+                            <div>
+                                <span class="detalle_car_nombre">Baños</span>
+                                <span class="detalle_car_valor" id="car_banios"></span>
+                            </div>
+                        </li>
+                        <li class="detalle_caracteristica">
+                            <span aria-hidden="true">🔌</span>
+                            <div>
+                                <span class="detalle_car_nombre">Enchufes</span>
+                                <span class="detalle_car_valor" id="car_enchufes"></span>
+                            </div>
+                        </li>
+                        <li class="detalle_caracteristica">
+                            <span aria-hidden="true">💨</span>
+                            <div>
+                                <span class="detalle_car_nombre">Ventilación</span>
+                                <span class="detalle_car_valor" id="car_ventilacion"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!--Panel reserva-->
+            <aside class="panel_reserva" id="panel_reserva">
+                <div class="panel_reserva_caja">
+
+                    <div class="panel_reserva_precio_cabecera">
+                        <span class="panel_reserva_precio" id="panel_precio"></span>
+                        <span class="panel_reserva_precio_nota">por noche</span>
+                    </div>
+
+                    <div class="panel_reserva_no_disponible" id="panel_no_disponible" hidden>
+                        <p>Esta cabaña no está disponible actualmente.</p>
+                    </div>
+
+                    <div class="panel_reserva_form" id="panel_form">
+
+                        <div class="panel_reserva_fechas">
+                            <div class="campo">
+                                <label class="campo_etiqueta" for="fecha_entrada">Entrada</label>
+                                <input class="campo_entrada" type="date" id="fecha_entrada">
+                            </div>
+                            <div class="campo">
+                                <label class="campo_etiqueta" for="fecha_salida">Salida</label>
+                                <input class="campo_entrada" type="date" id="fecha_salida">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label class="campo_etiqueta" for="num_personas">Número de personas</label>
+                            <input class="campo_entrada" type="number" id="num_personas" min="1" placeholder="1">
+                            <span class="campo_error" id="error_personas"></span>
+                        </div>
+
+                        <div class="panel_reserva_resumen" id="panel_resumen" hidden>
+                            <div class="panel_resumen_fila">
+                                <span id="resumen_noches_texto"></span>
+                                <span id="resumen_subtotal"></span>
+                            </div>
+                            <div class="panel_resumen_total">
+                                <span>Total</span>
+                                <span id="resumen_total"></span>
+                            </div>
+                        </div>
+
+                        <button class="panel_reserva_boton" id="boton_reservar">Reservar ahora</button>
+
+                        <p class="panel_reserva_nota">
+                            Necesitas <a href="login.html" class="auth_enlace">iniciar sesión</a> para reservar.
+                        </p>
+
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!--Pie-->
+    <footer class="pie_pagina">
+        <div class="pie_pagina_contenedor">
+            <p class="pie_pagina_texto">© 2026 Asociación GUP · Proyecto de voluntariado · Prototipo Alba Llano</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/cabania.js"></script>
+
+</body>
+</html>

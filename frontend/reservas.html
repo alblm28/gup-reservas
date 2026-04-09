@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUP — Mis reservas</title>
+    <link rel="icon" type="image/jpeg" href="recursos/gup_logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!--no se si ocultar la pagina del todo mientras no se esté logeado o si simplemnente poner mensaje de que debe hacerlo para acceder o algo asi-->
+    <!--Cabecera-->
+    <header class="cabecera">
+        <div class="cabecera_contenedor">
+            <a href="index.html" class="cabecera_logo">
+                <img src="recursos/gup_logo.png" alt="Logo GUP" class="cabecera_logo_img">
+            </a>
+            <nav class="cabecera_nav">
+                <a href="index.html" class="cabecera_nav_enlace">Cabañas</a>
+                <a href="reservas.html" class="cabecera_nav_enlace cabecera_nav_activo">Mis reservas</a>
+                <a href="login.html" class="cabecera_nav_enlace" id="nav_sesion">Iniciar sesión</a>
+            </nav>
+            <button class="cabecera_menu" id="btn_menu_movil" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!--Menu movil-->
+    <div class="menu_movil" id="menu_movil" hidden>
+        <nav class="menu_movil_nav">
+            <a href="index.html" class="menu_movil_enlace">Cabañas</a>
+            <a href="reservas.html" class="menu_movil_enlace menu_movil_activo">Mis reservas</a>
+            <a href="login.html" class="menu_movil_enlace" id="menu_sesion">Iniciar sesión</a>
+        </nav>
+    </div>
+
+    <!--Sin sesion-->
+    <div class="reservas_sin_sesion" id="reservas_sin_sesion" hidden>
+        <div class="reservas_sin_sesion_caja">
+            <span class="reservas_sin_sesion_icono" aria-hidden="true">🔒</span>
+            <h2 class="reservas_sin_sesion_titulo">Acceso restringido</h2>
+            <p class="reservas_sin_sesion_texto">Debes iniciar sesión para ver tus reservas.</p>
+            <a href="login.html" class="reservas_boton_acceder">Iniciar sesión</a>
+        </div>
+    </div>
+
+    <!--Principal-->
+    <main class="reservas_principal" id="reservas_principal" hidden>
+
+        <!--Cabecera pagina-->
+        <div class="reservas_cabecera">
+            <div class="reservas_cabecera_contenedor">
+                <div>
+                    <h1 class="reservas_titulo">Mis reservas</h1>
+                    <p class="reservas_subtitulo" id="reservas_subtitulo"></p>
+                </div>
+                <div class="reservas_cabecera_acciones">
+                    <select class="filtros_selector reservas_filtro_estado" id="filtro_estado_reserva">
+                        <option value="">Todas</option>
+                        <option value="bloqueada">Bloqueadas</option>
+                        <option value="confirmada">Confirmadas</option>
+                        <option value="completada">Completadas</option>
+                        <option value="cancelada">Canceladas</option>
+                    </select>
+                    <button class="reservas_boton_cerrar_sesion" id="btn_cerrar_sesion">Cerrar sesión</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="reservas_contenedor">
+
+            <!--Cargando-->
+            <div class="estado_carga" id="estado_carga">
+                <div class="girador"></div>
+                <p>Cargando reservas...</p>
+            </div>
+
+            <!--Error-->
+            <div class="estado_error" id="estado_error" hidden>
+                <p class="estado_error_texto">No se pudieron cargar las reservas.</p>
+                <button class="filtros_boton" id="boton_reintentar">Reintentar</button>
+            </div>
+
+            <!--Sin reservas-->
+            <div class="estado_vacio" id="estado_vacio" hidden>
+                <p>No tienes reservas todavía.</p>
+                <a href="index.html" class="reservas_boton_acceder">Ver cabañas disponibles</a>
+            </div>
+
+            <!--Lista-->
+            <div class="reservas_lista" id="reservas_lista" hidden></div>
+
+        </div>
+
+    </main>
+
+    <!--Plantilla tarjeta reserva-->
+    <template id="plantilla_reserva">
+        <article class="reserva_tarjeta">
+            <div class="reserva_tarjeta_cabecera">
+                <div class="reserva_tarjeta_cabecera_info">
+                    <h2 class="reserva_nombre_cabana"></h2>
+                    <span class="reserva_estado_badge"></span>
+                </div>
+                <span class="reserva_precio_final"></span>
+            </div>
+            <div class="reserva_tarjeta_cuerpo">
+                <div class="reserva_dato">
+                    <span class="reserva_dato_icono" aria-hidden="true">📅</span>
+                    <div>
+                        <span class="reserva_dato_etiqueta">Fechas</span>
+                        <span class="reserva_dato_valor reserva_fechas"></span>
+                    </div>
+                </div>
+                <div class="reserva_dato">
+                    <span class="reserva_dato_icono" aria-hidden="true">👥</span>
+                    <div>
+                        <span class="reserva_dato_etiqueta">Huéspedes</span>
+                        <span class="reserva_dato_valor reserva_huespedes"></span>
+                    </div>
+                </div>
+                <div class="reserva_dato">
+                    <span class="reserva_dato_icono" aria-hidden="true">🕐</span>
+                    <div>
+                        <span class="reserva_dato_etiqueta">Reservada el</span>
+                        <span class="reserva_dato_valor reserva_fecha_creacion"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="reserva_tarjeta_pie">
+                <a class="reserva_boton_ver_cabana" href="#">Ver cabaña</a>
+                <button class="reserva_boton_cancelar" hidden>Cancelar reserva</button>
+            </div>
+        </article>
+    </template>
+
+    <!--Pie-->
+    <footer class="pie_pagina">
+        <div class="pie_pagina_contenedor">
+            <p class="pie_pagina_texto">© 2026 Asociación GUP · Proyecto de voluntariado · Prototipo Alba Llano</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/reservas.js"></script>
+
+</body>
+</html>
