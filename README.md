@@ -64,9 +64,11 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 \- \[x] Lógica
 
-\- \[x] Endpoints HTTP
+\- \[x] Endpoints HTTP 
 
-\- \[ ] Frontend
+\- \[x] Frontend
+
+pausa de primera fase hasta nuevos requisitos y acuerdos con el cliente
 
 
 

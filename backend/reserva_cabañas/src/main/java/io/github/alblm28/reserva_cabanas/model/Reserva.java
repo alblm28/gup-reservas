@@ -42,7 +42,7 @@ public class Reserva {
     @Column(name = "fecha_fin", nullable = false)
     private ZonedDateTime fechaFin;
 
-   //relacion N 1 cabanias
+    //relacion N 1 cabanias
     @ManyToOne(fetch = FetchType.LAZY)
     // Fetch.LAZYno carga la cabaña hasta que se necesite para mejor rendimiento
     @JoinColumn(name = "id_cabania", nullable = false)
@@ -52,4 +52,5 @@ public class Reserva {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
+
 }
