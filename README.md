@@ -14,6 +14,8 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 
 
+!\[muestra frontend index](docs/muestra\_index.png)
+
 \## Funcionalidades
 
 
@@ -64,11 +66,13 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 \- \[x] Lógica
 
-\- \[x] Endpoints HTTP 
+\- \[x] Endpoints HTTP
 
 \- \[x] Frontend
 
-pausa de primera fase hasta nuevos requisitos y acuerdos con el cliente
+Actualmente en pausa de primera fase hasta nuevos requisitos y acuerdos con el cliente,
+
+retoma prevista para junio.
 
 
 
