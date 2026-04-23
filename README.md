@@ -1,4 +1,4 @@
-\# Sistema de Reservas GUP
+# Sistema de Reservas GUP
 
 
 
@@ -6,7 +6,7 @@ Sistema de reservas de cabañas para voluntarios en Senegal.
 
 
 
-\## Descripción
+## Descripción
 
 
 
@@ -14,61 +14,61 @@ Este proyecto es un prototipo para la asociación GUP. Permite a los voluntarios
 
 
 
-!\[muestra frontend index](docs/muestra\_index.png)
+![muestra frontend index](docs/muestra\_index.png)
 
-\## Funcionalidades
+## Funcionalidades
 
 
 
-\- Ver catálogo de cabañas disponibles
+- Ver catálogo de cabañas disponibles
 
-\- Ordenar y filtrar por fechas, capacidad...
+- Ordenar y filtrar por fechas, capacidad...
 
-\- Realizar reservas con datos de los huéspedes
+- Realizar reservas con datos de los huéspedes
 
-\- Pago
+- Pago
 
 * Descargar PDF de confirmación
 
-\- Panel de administrador para gestionar reservas
+- Panel de administrador para gestionar reservas
 
 
 
-\## Tecnologías
+## Tecnologías
 
 
 
-\- \*\*Base de datos:\*\* PostgreSQL 18
+- **Base de datos:** PostgreSQL 18
 
-\- \*\*Backend:\*\* Java + Spring Boot
+- **Backend:** Java + Spring Boot
 
-\- \*\*Frontend:\*\* HTML, CSS, JavaScript | posible React a futuro
+- **Frontend:** HTML, CSS, JavaScript | posible React a futuro
 
-\- \*\*Pagos:\*\* Stripe API (por confirmar)
-
-
-
-\## Estado del Proyecto
+- **Pagos:** Stripe API (por confirmar)
 
 
 
-\- \[x] Requisitos
+## Estado del Proyecto
 
-\- \[x] Diagrama ER
 
-\- \[x] Diagrama de tablas
 
-\- \[x] Tablas SQL
+- [x] Requisitos
 
-\- \[x] Entidades y Enums
+- [x] Diagrama ER
 
-\- \[x] Interfaces de acceso a BD
+- [x] Diagrama de tablas
 
-\- \[x] Lógica
+- [x] Tablas SQL
 
-\- \[x] Endpoints HTTP
+- [x] Entidades y Enums
 
-\- \[x] Frontend
+- [x] Interfaces de acceso a BD
+
+- [x] Lógica
+
+- [x] Endpoints HTTP
+
+- [x] Frontend
 
 Actualmente en pausa de primera fase hasta nuevos requisitos y acuerdos con el cliente,
 
@@ -76,19 +76,19 @@ retoma prevista para junio.
 
 
 
-\## Estructura
+## Estructura
 
-gup-reservas/
+gup-reservas
 
-├── docs/ # Documentación y diagramas
+├── docs/ Documentación y diagramas
 
-├── sql/ # Scripts de base de datos
+├── sql/ - Scripts de base de datos
 
-├── backend/ # Java / SpringBoot
+├── backend/ Java y SpringBoot
 
-└── frontend/
+└── frontend/ Javascript, CSS, HTML
 
-\## Autor
+## Autor
 
 
 
@@ -96,15 +96,15 @@ Desarrollado por Alba Llano
 
 Email: alballanomanrique28@gmail.com
 
-LinkedIn: \[linkedin.com/in/alballanoma](https://linkedin.com/in/alballanoma)
+LinkedIn: [linkedin.com/in/alballanoma](https://linkedin.com/in/alballanoma)
 
-GitHub: \[github.com/alblm28](https://github.com/alblm28)
-
-
-
-\## Licencia
+GitHub: [github.com/alblm28](https://github.com/alblm28)
 
 
+
+## Licencia
+
+MIT
 
 MIT
 
