@@ -106,5 +106,3 @@ GitHub: [github.com/alblm28](https://github.com/alblm28)
 
 MIT
 
-MIT
-
